@@ -1,0 +1,85 @@
+Hephaestus {
+  Program        = Statement+
+  Statement      = Declaration
+                 | SimpleStatement
+                 | Loop
+                 | Conditionals
+  SimpleStatement= PrintStatement
+                 | Assignment
+                 | Return
+                 | FuncCall
+  Declaration    = ClassDec
+                 | FuncDec
+                 | VarDec
+  Loop           = ForStatement | WhileStatement
+  FuncDec        = (Type | "void") id "(" Params? "):" Statement* "---"
+  ClassDec       = "custom type" id ":" (FuncDec|VarDec)* "---"
+  VarDec         = Type id  ("=" Exp)   -- withValue
+                 | Type id               -- noValue
+  Params         = ListOf<Param, ",">
+  Param          = Type id
+
+  Exp            = Exp "or" Exp1           -- or
+                 | Exp1 "and" Exp2         -- and
+                 | Exp1
+  Exp1           = Exp1 relop Exp2         -- binary
+                 | Exp2
+  Exp2           = Exp2 addop Exp3         -- binary
+                 | Exp3
+  Exp3           = Exp3 mulop Exp4         -- binary
+                 | Exp4
+  Exp4           = Exp4 "^" Exp5           -- binary
+                 | Exp5
+  Exp5           = prefixop Exp6           -- prefix
+                 | Exp6
+  Exp6           = Exp6 "." FuncCall       -- methodCall
+                 | Exp6 "[" Exp "]"        -- subscripted
+                 | NumLit
+                 | StrLit
+                 | BoolLit
+                 | "{" ListOf<DictTerm, ","> "}"  --dict
+                 | "[" ListOf<Exp, ","> "]"       --list
+                 | "(" Exp ")"                    -- parens
+                 | FuncCall
+                 | id                           -- id
+  Exps           = Exp ("," Exp)*
+
+  Type           = "bool" | "num" | "string" | Dictionary | List
+  keyword        = ("Custom" | "dbprint" | "for" | "while" | "return" | "---" | "if" | "#"
+                 | "else" | "else if" | "what" | "true" | "false" | "print") ~idrest
+  FuncCall       = id "(" Exps? ")"
+
+  Assignment     = id "=" Exp
+
+  Return         = "return" Exp?
+
+  ForStatement   = "for" id "in" Exp ":" Statement* "---"
+  WhileStatement = "while" Condition Statement* "---"
+  Conditionals   = "if" Condition Statement* "---"
+                   ("else if" Condition Statement* "---" )*
+                 ("else" Statement* "---")?
+  PrintStatement = "print:" (StrLit | Exp)   --print
+                   | "dbprint:" id           --debugPrint
+ 
+  Condition      = "(" Exp "):"
+  NumLit         = digit+ ("." digit+)?
+  StrLit         = "\"" (~"\n" ~"\"" ~"---" any)* "\""
+  BoolLit        = "false" | "true"
+  List           = "list<" Type ">"
+  Dictionary     = "dict<" Type ";" Type ">"
+  DictTerm       =  Exp ";" Exp
+
+  addop          = "+" | "-"
+  mulop          = "*"| "%" | "/" | "//"
+  relop          = "<=" | ">=" | ">" | "<" | "==" | "!="
+  prefixop       = "-"          -- decrement
+                 | "not"        -- not
+                 | "+"          -- increment
+
+  id             = ~keyword ("_" | lower) idrest*
+  idrest         =  "_" | alnum
+  newline        =  "\n"+
+  space         :=  " " | "\t" | "\n" | comment
+  comment        =  "#" (~"\n" any)* "\n"
+
+}
