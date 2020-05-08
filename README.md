@@ -71,15 +71,24 @@ custom type greekGod:
 ```
 ## Functions
 ```
-void helloWorld(string name):
-     print: ("Hello" + name)
+string helloWorld(string name):
+     return ("Hello" + name)
  ---
  ```
  ```
- num celsiusToFarenheit(num celsius):
+ void celsiusToFarenheit(num celsius):
      num farenheit = (celsius * 9 / 5 + 32)
-     return farenheit
+     print:(farenheit)
  ---
+```
+```
+function cToF(celsius) 
+{
+  var cTemp = celsius;
+  var cToFahr = cTemp * 9 / 5 + 32;
+  var message = cTemp+'\xB0C is ' + cToFahr + ' \xB0F.';
+    console.log(message);
+}
 ```
 ```
 num fibonacci(num x):
