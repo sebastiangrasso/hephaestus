@@ -51,5 +51,34 @@ custom type greekGod:
      ---
  ---
  ```
+ ## Loops
+```
+ for x in 20:
+     for y in 10:
+         return (x*y)
+     ---
+ ---
 
+ for name in gods:
+     print:(name)
+ ---
+
+ while (angry == true):
+     for demigod in children:
+         print:("I demand a sacrfice!")
+     ---
+ ---
+```
+## Functions
+```
+void helloWorld(string name):
+     print: ("Hello" + name)
+ ---
+ ```
+ ```
+ num celsiusToFarenheit(num celsius):
+     num farenheit = (celsius * 9 / 5 + 32)
+     return farenheit
+ ---
+```
 
