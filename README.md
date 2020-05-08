@@ -19,3 +19,60 @@ Hephaestus was the Greek god of fire, metallurgy, forges and scultpture. Perhaps
 - List
 - Custom Classes
 
+## Sample Code `
+ # Variable Declarations + Assignment
+ num x
+ x = 7
+ num temp = 660
+
+ string name
+ string unit = "Celsius"
+
+ bool fireproof = true
+
+ list<string> powers = ["Fire", "Craftsmanship", "Metalwork"]
+ list<num> count = [1,2,3,4,5]
+
+ dict<string; string> godsToChildren = {"Apollo";"Orpheus", "Posideon";"Orion", "Zeus";"Hercules"}
+ dict<num; bool> primes = {4;no, 5;yes, 6;no, 7;yes, 8;no}
+
+ custom type greekGod:
+     list<string> parents
+     string symbol = "hammer"
+     string power = "metalurgy"
+     num childrenCount
+     
+     string summary():
+         return (symbol + power)
+     ---
+ ---
+
+ # Loops
+
+ for x in 20:
+     for y in 10:
+         return (x*y)
+     ---
+ ---
+
+ for name in gods:
+     print:(name)
+ ---
+
+ while (angry == true):
+     for demigod in children:
+         print:("I demand a sacrfice!")
+     ---
+ ---
+
+ # Functions
+ 
+ void helloWorld(string name):
+     print: ("Hello" + name)
+ ---
+ 
+ num celsiusToFarenheit(num celsius):
+     num farenheit = (celsius * 9 / 5 + 32)
+     return farenheit
+ ---
+ `
