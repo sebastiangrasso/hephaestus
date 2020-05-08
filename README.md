@@ -1,5 +1,5 @@
 # Hephaestus
-![alt text](image.jpg)
+![logo](/god-hephaestus-holds-hammer-his-hands-god-hephaestus-holds-hammer-his-hands-vector-emblem-124407268.jpg)
 ## Introduction
 Hephaestus was the Greek god of fire, metallurgy, forges and scultpture. Perhaps the most famous of his numerous inventions was the creation of "Automatons", or metal sculptures animated to perform tasks for him. This is where our language earns it's namesake. A strong, statically typed language, Hephaestus gives programmers the ability to elegantly craft programs to make computers do the work for them. It's pythonic speech-like syntax makes learning the language easy and it's large access to math operations makes it a great alternative for AI/data science applications. Learn Hephaestus and make you're machine come to life!
 
