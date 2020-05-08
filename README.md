@@ -28,7 +28,7 @@ Hephaestus was the Greek god of fire, metallurgy, forges and scultpture. Perhaps
 `list<string> powers = ["Fire", "Craftsmanship", "Metalwork"]`
 `list<num> count = [1,2,3,4,5]`
 - Custom Classes
-`custom type greekGod:
+```custom type greekGod:
      list<string> parents
      string symbol = "hammer"
      string power = "metalurgy"
@@ -37,6 +37,6 @@ Hephaestus was the Greek god of fire, metallurgy, forges and scultpture. Perhaps
      string summary():
          return (symbol + power)
      ---
- ---`
+ ---```
 
 
