@@ -69,19 +69,25 @@ custom type greekGod:
      ---
  ---
 ```
-## Functions
+## Sample Functions (followed by JS equivalents)
 ```
 string helloWorld(string name):
      return ("Hello" + name)
  ---
  ```
+ ``` javascript
+ function myFunction(name) {
+  return "Hello" + name);
+}
+``` 
+ 
  ```
  void celsiusToFarenheit(num celsius):
      num farenheit = (celsius * 9 / 5 + 32)
      print:(farenheit)
  ---
 ```
-```
+``` javascript
 function cToF(celsius) 
 {
   var cTemp = celsius;
