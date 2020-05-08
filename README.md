@@ -13,22 +13,24 @@ Hephaestus was the Greek god of fire, metallurgy, forges and scultpture. Perhaps
 
 ## Types
 - String
-`string name`
-`string unit = "Celsius"`
+```string name
+string unit = "Celsius"```
 - Num
- `num x`
- `x = 7`
- `num temp = 660`
+ ```
+ num x
+ x = 7
+ num temp = 660```
 - Boolean
-`bool fireproof = true`
+```bool fireproof = true```
 - Dict
-`dict<string; string> godsToChildren = {"Apollo";"Orpheus", "Posideon";"Orion", "Zeus";"Hercules"}`
- `dict<num; bool> primes = {4;no, 5;yes, 6;no, 7;yes, 8;no}`
+```dict<string; string> godsToChildren = {"Apollo";"Orpheus", "Posideon";"Orion", "Zeus";"Hercules"}
+dict<num; bool> primes = {4;no, 5;yes, 6;no, 7;yes, 8;no}```
 - List
-`list<string> powers = ["Fire", "Craftsmanship", "Metalwork"]`
-`list<num> count = [1,2,3,4,5]`
+```list<string> powers = ["Fire", "Craftsmanship", "Metalwork"]
+list<num> count = [1,2,3,4,5]```
 - Custom Classes
-```custom type greekGod:
+```
+custom type greekGod:
      list<string> parents
      string symbol = "hammer"
      string power = "metalurgy"
@@ -37,6 +39,7 @@ Hephaestus was the Greek god of fire, metallurgy, forges and scultpture. Perhaps
      string summary():
          return (symbol + power)
      ---
- ---```
+ ---
+ ```
 
 
